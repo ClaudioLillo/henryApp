@@ -10,32 +10,18 @@ const SECRET = process.env.SECRET;
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   auth: {
-      user: 'ecomerce0410@gmail.com',
-      pass: "henry1234."
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
   }
 });
 
-// const transporter = nodemailer.createTransport({
-// 	service: 'gmail',
-// 	host: 'smtp.gmail.com',
-// 	port: 465,
-// 	secure: true,
-// 	auth: {
-// 	  type: 'OAuth2',
-// 	  user: process.env.user,
-// 	  clientId: process.env.clientId,
-// 	  clientSecret: process.env.clientSecret,
-// 	  refreshToken: process.env.refreshToken,
-// 	  accessToken: process.env.accessToken
-// 	}
-//   })
 
 const uploadImage = (file) => new Promise((resolve, reject) => {
 
   cloudinary.config({
-    cloud_name: 'dxnd3uqlx',
-    api_key: '151315768991554',
-    api_secret: 'wonkrqTdVInQ8yTjb_-yJpRYxjE'
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET
   })
 
   cloudinary.uploader.upload(file.tempFilePath, function (result, err) {
