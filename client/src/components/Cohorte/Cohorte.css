@@ -1,0 +1,20 @@
+.subtitulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, rgba(255,207,0,1) 0%, rgba(238,255,0,0) 100%, rgba(0,0,0,1) 100%);
+    color: rgba(0, 0, 0);
+    font-size: 30px;
+}
+
+.links{
+    color: black;
+    border-radius: 1px solid black;
+}
+
+.linksGenerales{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 250px;
+}
